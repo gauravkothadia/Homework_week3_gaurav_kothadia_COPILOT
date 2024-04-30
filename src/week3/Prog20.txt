@@ -1,0 +1,42 @@
+package week3;
+
+Using a Loop:
+
+public class ArrayContainsValueExample {
+    public static void main(String[] args) {
+        int[] num = {1, 2, 3, 4, 5};
+        int toFind = 3;
+        boolean found = false;
+
+        for (int n : num) {
+            if (n == toFind) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            System.out.println(toFind + " is found.");
+        } else {
+            System.out.println(toFind + " is not found.");
+        }
+    }
+}
+==========================
+Using Stream (Java 8):
+
+import java.util.stream.IntStream;
+
+public class ArrayContainsValueUsingStream {
+    public static void main(String[] args) {
+        int[] num = {1, 2, 3, 4, 5};
+        int toFind = 7;
+        boolean found = IntStream.of(num).anyMatch(n -> n == toFind);
+
+        if (found) {
+            System.out.println(toFind + " is found.");
+        } else {
+            System.out.println(toFind + " is not found.");
+        }
+    }
+}
