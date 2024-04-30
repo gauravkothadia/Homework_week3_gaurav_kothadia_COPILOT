@@ -1,0 +1,51 @@
+USING LOOP:
+
+import java.util.Arrays;
+
+public class SumOfArrayElementsExample {
+    public static void main(String[] args) {
+        // Declare and initialize an integer array
+        int[] myArray = {1789, 2035, 1899, 1456, 2013, 1458, 2458, 1254, 1472, 2365, 1456, 2165, 1457, 2456};
+
+        // Initialize a variable to store the sum
+        int sum = 0;
+
+        // Calculate the sum of array elements
+        for (int num : myArray) {
+            sum += num;
+        }
+
+        // Print the sum
+        System.out.println("Sum of array elements: " + sum);
+    }
+}
+===================
+Using Arrays.stream() (One Line Solution):
+
+import java.util.Arrays;
+
+public class SumOfArrayElementsOneLineExample {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5};
+        int sum = Arrays.stream(nums).sum();
+        System.out.println("Sum of array elements: " + sum);
+    }
+}
+=======================
+Using Recursion:
+
+public class SumOfArrayElementsRecursionExample {
+    public static int sumArray(int[] arr, int n) {
+        if (n == 0) {
+            return arr[n];
+        }
+        return arr[n] + sumArray(arr, n - 1);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int n = arr.length;
+        int sum = sumArray(arr, n - 1);
+        System.out.println("Sum of array elements: " + sum);
+    }
+}
